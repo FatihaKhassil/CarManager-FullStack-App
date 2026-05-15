@@ -1,0 +1,61 @@
+services:
+
+  mariadb:
+    image: mariadb:12.2
+    container_name: mariadb-spring
+    restart: always
+
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: springboot
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+
+    container_name: springboot-backend
+    restart: always
+
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: springboot
+      DB_USER: root
+      DB_PASSWORD: root
+
+    ports:
+      - "9090:8082"
+
+  frontend:
+    build:
+      context: ./myapp
+      dockerfile: Dockerfile.frontend
+
+    container_name: react-frontend
+    restart: always
+
+    depends_on:
+      - backend
+
+    ports:
+      - "3000:80"
+
+volumes:
+  mariadb_data:
