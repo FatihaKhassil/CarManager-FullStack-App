@@ -9,12 +9,6 @@ Cette application est une application FullStack composée de :
 * Base de données : MariaDB
 * Conteneurisation : Docker & Docker Compose
 
-L’objectif est de lancer toute l’architecture avec une seule commande :
-
-```bash
-docker compose up --build
-```
-
 ## Architecture
 
 ```text
