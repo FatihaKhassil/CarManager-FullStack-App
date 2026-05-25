@@ -63,7 +63,17 @@ docker compose up --build
 
 ### Frontend
 
-```text
+cd C:\ENSIAS\S4-P2\FULLSTACK\SpringDataRestV3
+
+git init
+git remote add origin https://github.com/FatihaKhassil/fullstack-springboot-react-docker.git
+
+git checkout -b v3-improved
+
+git add .
+git commit -m "V3 - improved design, Register fix, Nginx routing"
+
+git push origin v3-improved```text
 http://localhost:3000
 ```
 
