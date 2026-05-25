@@ -72,13 +72,18 @@ Frontend React  →  Backend Spring Boot  →  MariaDB
 
 ## Estimation intelligente des prix
 
-L'application propose une estimation simple du prix des véhicules basée sur :
+L'application propose une analyse intelligente du prix des véhicules basée sur :
 
-- l'année du véhicule
-- le prix
-- le type de véhicule
+- La marque et le modèle du véhicule
+- L'année de fabrication
+- Le prix affiché
 
-Cette fonctionnalité représente une petite intégration d'IA métier permettant d'aider l'utilisateur dans l'évaluation des véhicules.
+L'analyse retourne :
+- **Prix élevé** : le prix dépasse la valeur normale pour ce type de véhicule, avec des conseils de négociation
+- **Prix normal** : le prix est adapté au marché, avec des conseils d'achat
+- **Prix bas** : le prix est en dessous du marché, avec des conseils de vérification
+
+Chaque analyse est accompagnée de **conseils personnalisés** pour aider l'utilisateur dans sa décision d'achat.
 
 ## Interface utilisateur
 
