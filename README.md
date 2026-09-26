@@ -1,4 +1,4 @@
-# FullStack Spring Boot + React + MariaDB Dockerized Application
+# CarManager — FullStack App (Spring Boot + React + MariaDB)
 
 ## Description
 
@@ -237,4 +237,4 @@ minikube dashboard
 ---
 
 Fatiha KHASSIL  
-ENSIAS — Data & Software Engineering
+ENSIAS — Data & Software Engineering.
