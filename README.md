@@ -2,27 +2,27 @@
 
 ## Description
 
-Cette application est une application FullStack de gestion automobile développée avec :
+This is a FullStack car management application built with:
 
-- Spring Boot pour le backend
-- React pour le frontend
-- MariaDB pour la base de données
-- Docker et Docker Compose pour la conteneurisation
-- Kubernetes (Minikube) pour l'orchestration des conteneurs
+- Spring Boot for the backend
+- React for the frontend
+- MariaDB for the database
+- Docker and Docker Compose for containerization
+- Kubernetes (Minikube) for container orchestration
 
-L'objectif du projet est de proposer une plateforme moderne permettant la gestion des véhicules avec une interface web responsive et une architecture conteneurisée.
+The goal of the project is to provide a modern platform for managing vehicles, with a responsive web interface and a containerized architecture.
 
 ---
 
 # Architecture
 
 ```text
-Frontend React  →  Backend Spring Boot  →  MariaDB
+React Frontend  →  Spring Boot Backend  →  MariaDB
 ```
 
 ---
 
-# Technologies utilisées
+# Technologies Used
 
 ## Backend
 
@@ -41,11 +41,11 @@ Frontend React  →  Backend Spring Boot  →  MariaDB
 - Axios
 - React Router DOM
 
-## Base de données
+## Database
 
 - MariaDB
 
-## DevOps & Conteneurisation
+## DevOps & Containerization
 
 - Docker
 - Docker Compose
@@ -54,71 +54,71 @@ Frontend React  →  Backend Spring Boot  →  MariaDB
 
 ---
 
-# Fonctionnalités principales
+# Main Features
 
-## Gestion des voitures
+## Car Management
 
-- Ajouter une voiture
-- Modifier une voiture
-- Supprimer une voiture
-- Afficher la liste des voitures
-- Consulter les informations des véhicules
+- Add a car
+- Edit a car
+- Delete a car
+- Display the list of cars
+- View vehicle details
 
-## Authentification
+## Authentication
 
-- Création de compte
-- Connexion utilisateur
-- Déconnexion
+- Account creation
+- User login
+- Logout
 
-## Estimation intelligente des prix
+## Smart Price Estimation
 
-L'application propose une analyse intelligente du prix des véhicules basée sur :
+The application provides an intelligent price analysis for vehicles based on:
 
-- La marque et le modèle du véhicule
-- L'année de fabrication
-- Le prix affiché
+- The vehicle's brand and model
+- The manufacturing year
+- The listed price
 
-L'analyse retourne :
-- **Prix élevé** : le prix dépasse la valeur normale pour ce type de véhicule, avec des conseils de négociation
-- **Prix normal** : le prix est adapté au marché, avec des conseils d'achat
-- **Prix bas** : le prix est en dessous du marché, avec des conseils de vérification
+The analysis returns:
+- **High price**: the price exceeds the normal value for this type of vehicle, along with negotiation tips
+- **Fair price**: the price matches the market, along with buying tips
+- **Low price**: the price is below market value, along with verification tips
 
-Chaque analyse est accompagnée de **conseils personnalisés** pour aider l'utilisateur dans sa décision d'achat.
+Each analysis comes with **personalized advice** to help the user make a buying decision.
 
-## Interface utilisateur
+## User Interface
 
-- Interface responsive
-- Dashboard moderne
-- Design sombre professionnel
-- Navigation simplifiée
+- Responsive interface
+- Modern dashboard
+- Professional dark design
+- Simplified navigation
 
 ---
 
-# Conteneurs Docker
+# Docker Containers
 
 ## Backend Container
 
-Contient l'application Spring Boot compilée en `.jar`.
+Contains the Spring Boot application compiled as a `.jar`.
 
 ## Frontend Container
 
-Contient l'application React buildée et servie avec Nginx.
+Contains the built React application served with Nginx.
 
 ## MariaDB Container
 
-Contient la base de données persistante.
+Contains the persistent database.
 
 ---
 
-# Volumes Docker
+# Docker Volumes
 
-Un volume Docker est utilisé afin de conserver les données MariaDB même après l'arrêt ou la suppression des conteneurs.
+A Docker volume is used to persist MariaDB data even after containers are stopped or removed.
 
 ---
 
-# Installation du projet
+# Project Installation
 
-## 1. Cloner le repository
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/FatihaKhassil/fullstack-springboot-react-docker.git
@@ -126,7 +126,7 @@ git clone https://github.com/FatihaKhassil/fullstack-springboot-react-docker.git
 
 ---
 
-## 2. Entrer dans le dossier du projet
+## 2. Enter the project folder
 
 ```bash
 cd fullstack-springboot-react-docker
@@ -134,7 +134,7 @@ cd fullstack-springboot-react-docker
 
 ---
 
-## 3. Lancer les conteneurs Docker
+## 3. Start the Docker containers
 
 ```bash
 docker compose up --build
@@ -142,7 +142,7 @@ docker compose up --build
 
 ---
 
-# Accès à l'application
+# Accessing the Application
 
 ## Frontend
 
@@ -164,11 +164,11 @@ localhost:3307
 
 ---
 
-# Structure du projet
+# Project Structure
 
 ```text
-├── src                          → Backend Spring Boot
-├── myapp                        → Frontend React
+├── src                          → Spring Boot backend
+├── myapp                        → React frontend
 ├── docker-compose.yml
 ├── Dockerfile.backend
 ├── Dockerfile.frontend
@@ -183,21 +183,21 @@ localhost:3307
 
 ---
 
-# Commandes utiles
+# Useful Commands
 
-## Arrêter les conteneurs
+## Stop the containers
 
 ```bash
 docker compose down
 ```
 
-## Relancer les conteneurs
+## Restart the containers
 
 ```bash
 docker compose up --build
 ```
 
-## Voir les logs Docker
+## View Docker logs
 
 ```bash
 docker compose logs
@@ -205,12 +205,12 @@ docker compose logs
 
 ---
 
-# Déploiement Kubernetes
+# Kubernetes Deployment
 
-## Prérequis
-- Minikube installé
-- kubectl installé
-- Docker installé
+## Prerequisites
+- Minikube installed
+- kubectl installed
+- Docker installed
 
 ## Windows
 ```powershell
@@ -222,14 +222,14 @@ docker compose logs
 bash deploy-k8s.sh
 ```
 
-## Accéder à l'API
-L'URL est affichée automatiquement à la fin du script.
-Ouvrir dans le navigateur :
+## Accessing the API
+The URL is automatically displayed at the end of the script.
+Open in the browser:
 ```text
 http://127.0.0.1:PORT/api/voitures
 ```
 
-## Dashboard Kubernetes
+## Kubernetes Dashboard
 ```bash
 minikube dashboard
 ```
@@ -237,4 +237,4 @@ minikube dashboard
 ---
 
 Fatiha KHASSIL  
-ENSIAS — Data & Software Engineering.
+ENSIAS — Data & Software Engineering
